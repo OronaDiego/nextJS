@@ -1,4 +1,6 @@
 import Link from "next/link";
+import mockData  from "@/app/data/productos.json";
+import ProductCard from "@/app/components/ProductCard";
 // import { usePathname } from "next/navigation";
 
 export async function generateMetadata({params, searchParams}, parent){
@@ -12,14 +14,22 @@ export default async function Productos({params}){
     const {categoria } = await params;
     // const ubicacion = usePathname();
     // console.log(ubicacion);
+    const items = categoria ? mockData.filter(item => item.categoria == categoria) : mockData;
+    console.log(items);
     
+    
+    
+
     return(
-        <div className="flex justify-center items-center h-screen">
+        <section className="flex justify-center items-center h-screen">
             <div className="text-center">
-                <h1 className="text-9xl">{categoria.toUpperCase().replaceAll("-"," ")}</h1>
-                <h3 className="text-3xl">Contenido de la pagina</h3>
+                {
+                    items.map(item => (
+                        <ProductCard  key={item.id} item={item}/>
+                    )) 
+                }
                 <Link href={"/"}>Volver a la Pagina Principal</Link>
             </div>
-        </div>
+        </section>
     )
 }
