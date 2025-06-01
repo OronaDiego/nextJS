@@ -1,12 +1,15 @@
 import Image from "next/image";
 
-const ProductCard = (items)=>{
+const ProductCard = ({item})=>{
+    
     return(
-        <div className=" flex justify-center items-center">
-            <Image src={"/img/" + items.imagen} alt="imagen" width="64" height="50"/>
+        <div className=" flex flex-col justify-center items-center">
             <div>
-                <p className="text-white">{items.nombre}</p>
-                <p>{items.descripcion}</p>
+            <Image src={'/img/'+ item.imagen} alt="imagen" width={50} height={50}/>
+            </div>
+            <div>
+                <p className="text-white">{item.nombre}</p>
+                <p>{item.descripcion}</p>
             </div>
         </div>
     )

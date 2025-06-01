@@ -15,7 +15,7 @@ export default async function Productos({params}){
     // const ubicacion = usePathname();
     // console.log(ubicacion);
     const items = categoria ? mockData.filter(item => item.categoria == categoria) : mockData;
-    console.log(items);
+    // console.log(items);
     
     
     
@@ -24,8 +24,8 @@ export default async function Productos({params}){
         <section className="flex justify-center items-center h-screen">
             <div className="text-center">
                 {
-                    items.map(item => (
-                        <ProductCard  key={item.id} item={item}/>
+                    items.map(i => (
+                        <ProductCard  key={i.id} item={i}/>
                     )) 
                 }
                 <Link href={"/"}>Volver a la Pagina Principal</Link>

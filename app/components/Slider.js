@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import slide1 from '../Img/Banner2.jpg';
-import slide2 from '../Img/Banner3.jpg';
-import slide3 from '../Img/Banner1.avif';
+import slide1 from '../../public/img/Banner1.avif';
+import slide2 from '../../public/img/Banner2.jpg';
+import slide3 from '../../public/img/Banner3.jpg';
 
 
 const images = [
