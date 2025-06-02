@@ -1,5 +1,5 @@
 const Post = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/', {cache:'no-store'});
     const posts = await response.json();
 
     return (
@@ -9,7 +9,7 @@ const Post = async () => {
             <ol className="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
             {
                 posts.map(item => (
-                    <li>
+                    <li key={item.id}>
                     <span className="font-semibold text-gray-900 dark:text-white">{item.title}</span>
                     </li>
                 ))
