@@ -10,18 +10,15 @@ export async function generateMetadata({params, searchParams}, parent){
     }
 };
 
-export default async function Productos({params}){    
-    const {categoria } = await params;
-    // const ubicacion = usePathname();
-    // console.log(ubicacion);
+export default async function Productos({params}){  
+    let categoria;
+    if(await params){
+        const {categoria } = await params;
+    }  
     const items = categoria ? mockData.filter(item => item.categoria == categoria) : mockData;
-    // console.log(items);
-    
-    
-    
 
     return(
-        <section className="flex justify-center items-center h-screen">
+        <section className="container m-auto flex justify-center items-center h-screen">
             <div className="text-center">
                 {
                     items.map(i => (

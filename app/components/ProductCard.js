@@ -4,7 +4,7 @@ import Link from "next/link";
 const ProductCard = ({item})=>{
     
     return(
-        <div className=" flex flex-col justify-center items-center">
+        <div className="flex m-auto flex-col justify-center items-center">
             <div>
                 <Link href={"/producto/"+ item.id}>
                     <Image src={'/img/'+ item.imagen} alt={item.nombre} width={50} height={50}/>
