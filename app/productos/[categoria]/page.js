@@ -1,7 +1,6 @@
 import Link from "next/link";
-import mockData  from "@/app/data/productos.json";
-import ProductCard from "@/app/components/ProductCard";
-// import { usePathname } from "next/navigation";
+import ProductList from "@/app/components/ProductList";
+import { Suspense } from "react";
 
 export async function generateMetadata({params, searchParams}, parent){
     const {categoria } = await params;
@@ -11,22 +10,15 @@ export async function generateMetadata({params, searchParams}, parent){
 };
 
 export default async function Productos({params}){  
-    let categoria;
-    if(await params){
-        const {categoria } = await params;
-    }  
-    const items = categoria ? mockData.filter(item => item.categoria == categoria) : mockData;
-
+    const {categoria } = await params; 
     return(
         <section className="container m-auto flex justify-center items-center h-screen">
-            <div className="text-center">
+            <Suspense fallback={<h1 className="text-4xl font-extrabold text-white-600">Cargando...</h1>}>
                 {
-                    items.map(i => (
-                        <ProductCard  key={i.id} item={i}/>
-                    )) 
+                    <ProductList categoria={categoria}/>
                 }
                 <Link href={"/"}>Volver a la Pagina Principal</Link>
-            </div>
+            </Suspense>
         </section>
     )
 }
