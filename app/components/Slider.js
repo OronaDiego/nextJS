@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import slide1 from '../../public/img/Banner1.avif';
-import slide2 from '../../public/img/Banner2.jpg';
-import slide3 from '../../public/img/Banner3.jpg';
+import slide1 from '../../public/img/banner1.png';
+import slide2 from '../../public/img/banner2.png';
+import slide3 from '../../public/img/banner3.png';
 
 
 const images = [
@@ -19,13 +19,13 @@ export default function Slider() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent((prev) => (prev + 1) % images.length);
-        }, 8000); // Cambia cada 3 segundos
+        }, 9000); 
 
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className="relative w-screen h-[60vh] overflow-hidden">
+        <div className="relative w-screen h-[100vh] overflow-hidden">
             {images.map((src, index) => (
                 <div
                     key={index}

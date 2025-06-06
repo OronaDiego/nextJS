@@ -9,6 +9,16 @@ export async function generateMetadata({params, searchParams}, parent){
     }
 };
 
+export async function generateStaticParams(){
+    return[
+        {categoria:"baterias"},
+        {categoria:"guitarras"},
+        {categoria:"auriculares"},
+        {categoria:"consolas"},
+        {categoria:"microfonos"}
+    ]
+}
+
 export default async function Productos({params}){  
     const {categoria } = await params; 
     return(

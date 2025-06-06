@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "slug": 1,
         "nombre": "Guitarra Eléctrica Fender Stratocaster",
         "descripcion": "Guitarra eléctrica con cuerpo de aliso, mástil de arce y tres pastillas single coil.",
         "precio": 1200.0,
@@ -8,7 +8,7 @@
         "imagen": "FenderStratocaster.webp"
     },
     {
-        "id": 2,
+        "slug": 2,
         "nombre": "Batería Acústica Pearl Export",
         "descripcion": "Set completo de batería acústica con herrajes incluidos. Ideal para principiantes y avanzados.",
         "precio": 850.0,
@@ -16,7 +16,7 @@
         "imagen": "PearlExport.jpg"
     },
     {
-        "id": 3,
+        "slug": 3,
         "nombre": "Micrófono Shure SM58",
         "descripcion": "Micrófono dinámico vocal, ideal para presentaciones en vivo y grabaciones.",
         "precio": 99.99,
@@ -24,7 +24,7 @@
         "imagen": "ShureSM58.jpg"
     },
     {
-        "id": 4,
+        "slug": 4,
         "nombre": "Auriculares Audio-Technica ATH-M50X",
         "descripcion": "Auriculares profesionales para monitoreo de estudio con excelente aislamiento y fidelidad sonora.",
         "precio": 149.0,
@@ -32,7 +32,7 @@
         "imagen": "Audio-technicaATH-M50X.jpg"
     },
     {
-        "id": 5,
+        "slug": 5,
         "nombre": "Interfaz de Audio Focusrite Scarlett 2i2",
         "descripcion": "Interfaz de audio USB con dos entradas combo, ideal para grabación casera.",
         "precio": 179.0,
