@@ -6,7 +6,9 @@ import { addDoc, collection, getDocs } from "firebase/firestore";
 export async function GET(){
     const productref = collection(db, "productos");
     const querySnapchot = await getDocs(productref);
-    const docs = querySnapchot.docs.map(item => (item.data()));
+    const docs = querySnapchot.docs.map(item => ({
+        id: item.id,
+        ...item.data()}));
     
     return NextResponse.json(docs);
 }

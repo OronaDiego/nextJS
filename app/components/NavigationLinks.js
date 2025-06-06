@@ -1,7 +1,7 @@
 // components/NavigationLinks.js
 import Link from "next/link";
 
-const NavigationLinks = () => {
+const NavigationLinks = (item) => {
     return (
         <nav className="flex gap-5">
             <Link href="/" className="text-white">

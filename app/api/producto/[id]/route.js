@@ -1,9 +1,15 @@
+import { db } from "@/app/firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 import { NextResponse } from "next/server";
-import mockData from "@/app/data/productos.json";
 
-export async function GET(request, {params}){
-    const {id}= params;
-    const data = id ? mockData.filter(item => item.id == id) : mockData;
+export async function GET(req, { params }) {
+  const { id } = params;
+  const docRef = doc(db, "productos", id);
+  const docSnap = await getDoc(docRef);
 
-    return NextResponse.json(data)
+  if (!docSnap.exists()) {
+    return NextResponse.json({ error: "Producto no encontrado" }, { status: 404 });
+  }
+
+  return NextResponse.json({ id: docSnap.id, ...docSnap.data() });
 }
