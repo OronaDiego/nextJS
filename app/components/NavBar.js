@@ -1,15 +1,25 @@
 import Logo from './Logo.js'
-import Menu from './Menu.js'
+import MenuHamburg from './MenuHamburg.js'
+import NavigationLinks from './NavigationLinks.js'
 
-//Barra de navegacion
-const Nav = ()=>{
-    return(
+const Nav = () => {
+    return (
         <header className='w-full bg-black'>
-            <div className='container m-auto p-5 flex flex-row justify-between'>
-            <Logo/>
-            <Menu/>
+            <div className='container m-auto p-5 flex justify-between items-center'>
+                <Logo />
+
+                {/* Links visibles en escritorio */}
+                <div className="hidden md:block">
+                    <NavigationLinks />
+                </div>
+
+                {/* Menú hamburguesa en mobile */}
+                <div className="block md:hidden">
+                    <MenuHamburg />
+                </div>
             </div>
         </header>
     )
-}
-export default Nav
+};
+
+export default Nav;
