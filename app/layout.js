@@ -21,6 +21,8 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Web App",
   description: "E-commerce autoadministrable",
+  keywords:["instrumentos musicales, tienda de música, comprar guitarras, baterías acústicas, instrumentos online, auriculares profesionales, micrófonos condensador, consolas de audio, accesorios musicales, tienda de instrumentos, música en vivo, estudio de grabación, guitarras eléctricas, bajos, parlantes, home studio"]
+
 };
 
 export default function RootLayout({ children }) {
